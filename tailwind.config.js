@@ -1,17 +1,9 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
-
 module.exports = {
   future: {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
   },
-  theme: {
-    extend: {
-      fontFamily: {
-        mono: ['PT Mono', ...defaultTheme.fontFamily.mono],
-      },
-    },
-  },
+  theme: {},
   variants: {},
   plugins: [require('@tailwindcss/typography'), require('@tailwindcss/ui')],
   purge: {
