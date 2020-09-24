@@ -1,78 +1,91 @@
 <template>
   <div class="messages">
-    <table class="msgs text-sm text-grey-darker w-full">
-      <thead>
+    <table class="msgs text-sm text-gray-600 w-full">
+      <thead v-if="messages.length">
         <tr class="flex border-b text-2xl">
           <th class="pr-3 text-left font-normal">
-            <input v-model="allSelected" type="checkbox" />
+            <input
+              v-model="allSelected"
+              type="checkbox"
+              class="form-checkbox"
+            />
           </th>
-          <th class="text-left font-normal pr-2 flex-grow">
-            <div :class="[ selectedMessages.length ? 'hidden' : 'inline-block' ]">
+          <th
+            class="msg__col flex items-center text-left font-normal pr-2 flex-grow"
+          >
+            <div :class="[selectedMessages.length ? 'hidden' : 'flex ']">
               <a class="mr-1" href="#" title="Refresh">
-                <svgicon icon="refresh" />
+                <RefreshIcon class="w-5 h-5" />
               </a>
             </div>
-            <div class="inline-block" v-show="selectedMessages.length">
+            <div
+              class="flex items-center space-x-2"
+              v-show="selectedMessages.length"
+            >
               <a href="#" title="Archive selected">
-                <svgicon icon="archive" />
+                <ArchiveIcon class="w-5 h-5" />
               </a>
               <a href="#" title="Report spam">
-                <svgicon icon="alert-octagon" />
+                <AlertIcon class="w-5 h-5" />
               </a>
-              <a href="#" title="Delete">
-                <svgicon icon="delete" />
+              <a @click="removeMessages" href="#" title="Delete">
+                <DeleteIcon class="w-5 h-5" />
               </a>
               <a href="#" title="Mark as read">
-                <svgicon icon="email-open" />
+                <MailIcon class="w-5 h-5" />
               </a>
               <a href="#" title="Snooze">
-                <svgicon icon="clock" />
+                <ClockIcon class="w-5 h-5" />
               </a>
             </div>
             <a class="mr-1" href="#" title="More">
-              <svgicon icon="dots-vertical" />
+              <MoreVerticalIcon class="w-5 h-5" />
             </a>
           </th>
-          <th class="text-left font-normal">
+          <th class="msg__col text-left font-normal">
             <a href="#" title="Settings">
-              <svgicon icon="settings" />
+              <SettingsIcon class="w-5 h-5" />
             </a>
           </th>
         </tr>
       </thead>
       <tbody>
-        <Message v-for="message in messages" :key="message.id" :message="message" />
+        <Message
+          v-for="message in messages"
+          :key="message.id"
+          :message="message"
+        />
       </tbody>
     </table>
   </div>
 </template>
 
 <script>
-  import { init } from '~/shared'
-  import { mapGetters, mapActions } from 'vuex'
-  import Message from '~/components/Message'
+import {init} from '~/shared'
+import {mapGetters, mapActions} from 'vuex'
+import Message from '~/components/Message'
 
-  export default {
-    components: {
-      Message
+export default {
+  components: {
+    Message,
+  },
+  fetch: init,
+  computed: {
+    messages() {
+      return this.$store.getters.getMessagesByTag(this.$route.params.tag)
     },
-    fetch: init,
-    computed: {
-      messages() {
-        return this.$store.getters.getMessagesByTag(this.$route.params.tag)
+    allSelected: {
+      get() {
+        return this.$store.getters.allSelected
       },
-      allSelected: {
-        get() {
-          return this.$store.getters.allSelected
-        },
-        set() {
-          this.$store.dispatch('toggleAll', this.messages)
-        }
+      set() {
+        this.$store.dispatch('toggleAll', this.messages)
       },
-      ...mapGetters(['selectedMessages'])
     },
-    methods: {
-      ...mapActions(['toggleAll'])
-    }
-  }
+    ...mapGetters(['selectedMessages']),
+  },
+  methods: {
+    ...mapActions(['toggleAll', 'removeMessages']),
+  },
+}
 </script>

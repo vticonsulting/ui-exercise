@@ -1,21 +1,35 @@
 {
   "name": "@victortolbert/ui-exercise",
   "dependencies": {
-    "@nuxtjs/axios": "^5.0.0",
-    "json-server": "^0.14.0",
-    "nuxt": "^2.0.0"
+    "@nuxtjs/axios": "^5.12.2",
+    "json-server": "^0.16.1",
+    "nuxt": "^2.14.6"
   },
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
+    "build": "nuxt generate",
     "start": "nuxt start",
-    "generate-icons": "vsvg -s ./assets/svg -t ./components/Icons"
+    "generate": "nuxt generate",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "test:e2e:run": "start-server-and-test start http://localhost:3000 cy:run",
+    "test:e2e:dev": "start-server-and-test dev http://localhost:3000 cy:open",
+    "test:unit": "jest --config jest.config.js --no-cache"
   },
   "devDependencies": {
-    "autoprefixer": "^9.1.5",
-    "node-sass": "^4.9.3",
-    "sass-loader": "^7.1.0",
-    "tailwindcss": "^0.6.6",
-    "vue-svgicon": "^3.2.0"
+    "@nuxtjs/tailwindcss": "^3.0.2",
+    "@nuxt/types": "^2.14.6",
+    "@tailwindcss/typography": "0.2.0",
+    "@tailwindcss/ui": "^0.6.2",
+    "@vue/test-utils": "^1.1.0",
+    "babel-jest": "^26.3.0",
+    "cypress": "^5.2.0",
+    "jest": "^26.4.2",
+    "jest-serializer-vue-tjw": "^3.14.0",
+    "netlify-plugin-cypress": "^1.4.1",
+    "postcss-preset-env": "^6.7.0",
+    "start-server-and-test": "^1.11.4",
+    "vue-feather-icons": "^5.1.0",
+    "vue-jest": "^4.0.0-rc.0"
   }
 }

@@ -1,46 +1,55 @@
 <template>
-  <table class="text-sm text-grey-darker table-fixed w-full">
+  <table class="text-sm text-gray-600 table-fixed w-full">
     <thead v-if="messages.length">
       <tr class="flex border-b text-2xl">
         <th class="pr-3 text-left font-normal">
-          <input v-model="allSelected" type="checkbox" />
+          <input v-model="allSelected" type="checkbox" class="form-checkbox" />
         </th>
-        <th class="msg__col text-left font-normal pr-2 flex-grow">
-          <div :class="[ selectedMessages.length ? 'hidden' : 'inline-block' ]">
+        <th
+          class="msg__col flex items-center text-left font-normal pr-2 flex-grow"
+        >
+          <div :class="[selectedMessages.length ? 'hidden' : 'flex ']">
             <a class="mr-1" href="#" title="Refresh">
-              <svgicon icon="refresh" />
+              <RefreshIcon class="w-5 h-5" />
             </a>
           </div>
-          <div class="inline-block" v-show="selectedMessages.length">
+          <div
+            class="flex items-center space-x-2"
+            v-show="selectedMessages.length"
+          >
             <a href="#" title="Archive selected">
-              <svgicon icon="archive" />
+              <ArchiveIcon class="w-5 h-5" />
             </a>
             <a href="#" title="Report spam">
-              <svgicon icon="alert-octagon" />
+              <AlertIcon class="w-5 h-5" />
             </a>
             <a @click="removeMessages" href="#" title="Delete">
-              <svgicon icon="delete" />
+              <DeleteIcon class="w-5 h-5" />
             </a>
             <a href="#" title="Mark as read">
-              <svgicon icon="email-open" />
+              <MailIcon class="w-5 h-5" />
             </a>
             <a href="#" title="Snooze">
-              <svgicon icon="clock" />
+              <ClockIcon class="w-5 h-5" />
             </a>
           </div>
           <a class="mr-1" href="#" title="More">
-            <svgicon icon="dots-vertical" />
+            <MoreVerticalIcon class="w-5 h-5" />
           </a>
         </th>
         <th class="msg__col text-left font-normal">
           <a href="#" title="Settings">
-            <svgicon icon="settings" />
+            <SettingsIcon class="w-5 h-5" />
           </a>
         </th>
       </tr>
     </thead>
     <tbody v-if="messages.length">
-      <Message v-for="message in messages" :key="message.id" :message="message" />
+      <Message
+        v-for="message in messages"
+        :key="message.id"
+        :message="message"
+      />
     </tbody>
     <tbody v-else>
       <tr>
@@ -51,29 +60,25 @@
 </template>
 
 <script>
-  import { mapState, mapGetters, mapActions } from 'vuex'
-  import { init, strip } from '~/shared'
-  import Message from '~/components/Message'
+import {mapState, mapGetters, mapActions} from 'vuex'
+import {init, strip} from '~/shared'
 
-  export default {
-    components: {
-      Message
-    },
-    fetch: init,
-    computed: {
-      allSelected: {
-        get() {
-          return this.$store.getters.allSelected
-        },
-        set() {
-          this.$store.dispatch('toggleAll', this.messages)
-        }
+export default {
+  fetch: init,
+  computed: {
+    allSelected: {
+      get() {
+        return this.$store.getters.allSelected
       },
-      ...mapState(['messages']),
-      ...mapGetters(['selectedMessages'])
+      set() {
+        this.$store.dispatch('toggleAll', this.messages)
+      },
     },
-    methods: {
-      ...mapActions(['toggleAll', 'removeMessages'])
-    }
-  }
+    ...mapState(['messages']),
+    ...mapGetters(['selectedMessages']),
+  },
+  methods: {
+    ...mapActions(['toggleAll', 'removeMessages']),
+  },
+}
 </script>
