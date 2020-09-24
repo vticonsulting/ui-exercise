@@ -7,6 +7,7 @@
   },
   "scripts": {
     "dev": "nuxt",
+    "local-dev": "vercel dev -A vercel.dev.json",
     "build": "nuxt generate",
     "start": "nuxt start",
     "generate": "nuxt generate",
