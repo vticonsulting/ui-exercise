@@ -19,6 +19,7 @@
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^3.0.2",
     "@nuxt/types": "^2.14.6",
+    "@nuxtjs/vercel-builder": "^0.17.7",
     "@tailwindcss/typography": "0.2.0",
     "@tailwindcss/ui": "^0.6.2",
     "@vue/test-utils": "^1.1.0",
