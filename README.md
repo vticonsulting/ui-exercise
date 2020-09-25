@@ -1,6 +1,6 @@
 # UI Exercise
 
-To preview: https://ui-exercise.vtolbert.vercel.app
+To preview: https://ui-exercise.victortolbert.com
 
 > Note: _Initially, it may take up to 60 seconds to wakeup the server_
 
