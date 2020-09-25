@@ -14,7 +14,7 @@
   "scripts": {
     "dev": "nuxt",
     "local-dev": "vercel dev -A vercel.dev.json",
-    "build": "nuxt build",
+    "build": "nuxt generate",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "cy:open": "cypress open",
