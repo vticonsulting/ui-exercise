@@ -3,5 +3,9 @@
 node_modules/
 test/e2e/videos
 test/e2e/screenshots
-
 .vercel
+coverage
+.nyc_output
+.env
+.nuxt
+dist

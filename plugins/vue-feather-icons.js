@@ -7,6 +7,7 @@ import {
   DeleteIcon,
   MailIcon,
   MoreVerticalIcon,
+  PlusIcon,
   InboxIcon,
   RefreshCwIcon,
   SettingsIcon,
@@ -20,6 +21,7 @@ Vue.component('ClockIcon', ClockIcon)
 Vue.component('DeleteIcon', DeleteIcon)
 Vue.component('MailIcon', MailIcon)
 Vue.component('MoreVerticalIcon', MoreVerticalIcon)
+Vue.component('PlusIcon', PlusIcon)
 Vue.component('InboxIcon', InboxIcon)
 Vue.component('RefreshIcon', RefreshCwIcon)
 Vue.component('SettingsIcon', SettingsIcon)

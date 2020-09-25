@@ -51,6 +51,7 @@
               <span class="block text-xs uppercase tracking-wider">From</span>
               <b>{{ message.sender }}</b>
             </span>
+            <!-- eslint-disable-next-line vue/no-v-html -->
             <div class="max-w-lg" v-html="message.body" />
           </div>
         </td>
@@ -63,6 +64,7 @@
 import {init} from '~/shared'
 
 export default {
+  name: 'MessagePage',
   fetch: init,
   data() {
     return {

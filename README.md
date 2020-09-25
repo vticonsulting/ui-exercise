@@ -23,7 +23,9 @@ $ npm run dev
 $ npm run build
 $ npm start
 
-# build for production and launch server
+# Run unit tests
 $ npm run test:unit
 
+# Run end-to-end tests
+$ npm run test:e2e
 ```

@@ -1,21 +1,20 @@
-const path = require('path')
+import path from 'path'
 
 export default {
   env: {
     baseURL: process.env.BASE_URL || 'http://localhost:3000',
   },
-  ssr: false,
-  components: true,
   head: {
     title: 'UI Exercise',
     meta: [
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-      {hid: 'description', content: 'UI Exercise'},
+      {hid: 'description', name: 'description', content: 'UI Exercise'},
     ],
     link: [{rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}],
   },
-  modules: ['@nuxtjs/axios'],
+  components: true,
+  modules: ['@nuxtjs/axios', '@nuxtjs/pwa', '@nuxt/content'],
   buildModules: ['@nuxtjs/tailwindcss'],
   plugins: ['~/plugins/vue-feather-icons.js'],
   serverMiddleware: ['~/api/index.js'],
@@ -40,7 +39,7 @@ export default {
       },
     },
     preset: {
-      stage: 1, // see https://tailwindcss.com/docs/using-with-preprocessors#future-css-featuress
+      stage: 1,
     },
   },
   generate: {

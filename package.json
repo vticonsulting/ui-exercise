@@ -1,37 +1,44 @@
 {
   "name": "@victortolbert/ui-exercise",
+  "version": "2.0.0",
+  "private": true,
   "dependencies": {
+    "@nuxt/content": "^1.9.0",
+    "@nuxt/types": "^2.14.6",
     "@nuxtjs/axios": "^5.12.2",
+    "@nuxtjs/pwa": "^3.0.2",
+    "core-js": "^3.6.5",
     "json-server": "^0.16.1",
     "nuxt": "^2.14.6"
   },
   "scripts": {
     "dev": "nuxt",
     "local-dev": "vercel dev -A vercel.dev.json",
-    "build": "nuxt generate",
+    "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
+    "test:e2e": "start-server-and-test dev http://localhost:3000 cy:open",
     "test:e2e:run": "start-server-and-test start http://localhost:3000 cy:run",
-    "test:e2e:dev": "start-server-and-test dev http://localhost:3000 cy:open",
-    "test:unit": "jest --config jest.config.js --no-cache"
+    "test:unit": "jest"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^3.0.2",
     "@nuxt/types": "^2.14.6",
+    "@nuxtjs/tailwindcss": "^3.1.0",
     "@nuxtjs/vercel-builder": "^0.17.7",
     "@tailwindcss/typography": "0.2.0",
     "@tailwindcss/ui": "^0.6.2",
     "@vue/test-utils": "^1.1.0",
+    "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^26.3.0",
     "cypress": "^5.2.0",
     "jest": "^26.4.2",
     "jest-serializer-vue-tjw": "^3.14.0",
     "netlify-plugin-cypress": "^1.4.1",
-    "postcss-preset-env": "^6.7.0",
+    "prettier": "^2.1.2",
     "start-server-and-test": "^1.11.4",
     "vue-feather-icons": "^5.1.0",
-    "vue-jest": "^4.0.0-rc.0"
+    "vue-jest": "^3.0.7"
   }
 }
