@@ -15,7 +15,7 @@ export default {
     link: [{rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}],
   },
   components: true,
-  modules: ['@nuxtjs/axios', '@nuxt/content'],
+  modules: ['@nuxtjs/axios'],
   buildModules: ['@nuxtjs/tailwindcss'],
   plugins: ['~/plugins/vue-feather-icons.js'],
   serverMiddleware: ['~/api/index.js'],
