@@ -2,10 +2,45 @@ module.exports = {
   future: {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
+    defaultLineHeights: true,
+    standardFontWeights: true,
   },
-  theme: {},
-  variants: {},
-  plugins: [require('@tailwindcss/typography'), require('@tailwindcss/ui')],
+  theme: {
+    darkSelector: '.dark-mode',
+    extend: {
+      colors: {
+        primary: {
+          100: '#EAF8F0',
+          200: '#CBEDD8',
+          300: '#ABE1C1',
+          400: '#6CCB93',
+          500: '#2DB564',
+          600: '#29A35A',
+          700: '#1B6D3C',
+          800: '#14512D',
+          900: '#0E361E',
+        },
+      },
+    },
+    aspectRatio: {
+      square: [1, 1],
+      '16/9': [16, 9],
+      '4/3': [4, 3],
+      '21/9': [21, 9],
+    },
+  },
+  variants: {
+    margin: ['responsive', 'last'],
+    backgroundColor: ['responsive', 'hover', 'focus', 'dark'],
+    textColor: ['responsive', 'hover', 'focus', 'dark', 'dark-hover'],
+    borderColor: ['responsive', 'hover', 'focus', 'dark'],
+  },
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('tailwindcss-aspect-ratio'),
+    require('@tailwindcss/ui'),
+    require('tailwindcss-dark-mode')(),
+  ],
   purge: {
     enabled: process.env.NODE_ENV === 'production',
     content: [
@@ -16,4 +51,5 @@ module.exports = {
       'nuxt.config.js',
     ],
   },
+  experimental: {applyComplexClasses: true, darkModeVariant: true},
 }

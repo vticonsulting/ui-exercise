@@ -1,4 +1,4 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "./components.pcss";
-@import "tailwindcss/utilities";
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import './components/transitions.pcss';
+@import 'tailwindcss/utilities';

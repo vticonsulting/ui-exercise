@@ -1,7 +1,4 @@
 {
-  "baseUrl": "http://localhost:3000",
-  "integrationFolder": "test/e2e",
-  "fixturesFolder":"test/fixtures",
-  "pluginsFile":"test/plugins",
-  "supportFile":"test/support"
+  "baseUrl": "http://tolbert.test:8701/messages",
+  "integrationFolder": "cypress/e2e"
 }

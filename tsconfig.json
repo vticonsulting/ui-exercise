@@ -1,7 +1,24 @@
 {
-    "compilerOptions": {
-      "types": [
-        "@nuxt/types",
-      ]
-    }
-  }
+  "compilerOptions": {
+    "target": "es2018",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "lib": ["esnext", "esnext.asynciterable", "dom"],
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "sourceMap": true,
+    "strict": true,
+    "noEmit": true,
+    "experimentalDecorators": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./src/*"],
+      "@/*": ["./src/*"],
+      "~~/*": ["./*"],
+      "@@/*": ["./*"]
+    },
+    "types": ["@types/node", "@nuxt/types", "@nuxt/content", "cypress", "@testing-library/cypress"]
+  },
+  "exclude": ["node_modules", ".nuxt"]
+}
