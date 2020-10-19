@@ -13,10 +13,19 @@
             <div class="flex">
               <NuxtLink
                 to="messages"
-                class="px-3 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out bg-gray-900 rounded-md focus:outline-none focus:text-white focus:bg-gray-700"
+                class="px-3 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out rounded-md focus:outline-none focus:text-white focus:bg-gray-700"
+                active-class="bg-gray-900"
               >
                 Messages
               </NuxtLink>
+
+              <a
+                href="https://storybook.tolbert.design"
+                target="_blank"
+                class="px-3 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out rounded-md focus:outline-none focus:text-white focus:bg-gray-700"
+              >
+                Storybook
+              </a>
             </div>
           </div>
         </div>

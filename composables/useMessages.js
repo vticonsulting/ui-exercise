@@ -1,8 +1,9 @@
-import {useFetch, useContext, watchEffect, ref, computed} from '@nuxtjs/composition-api'
+import {useFetch, useContext, ref, computed} from '@nuxtjs/composition-api'
 import {strip} from '@/helpers'
 
 export default function useMessages() {
   const {$axios, route} = useContext()
+
   const messages = ref([])
   const checked = ref([])
   const isCheckAll = ref(false)
@@ -18,7 +19,6 @@ export default function useMessages() {
     return messages.value
   })
 
-  // const tags = computed(() => messages.values)
   const tags = computed(() =>
     messages.value
       .map(message => message.tags)
@@ -31,8 +31,6 @@ export default function useMessages() {
         return obj
       }, {}),
   )
-
-  watchEffect(() => console.log(messages.value))
 
   function removeMessage(index) {
     messages.value.splice(index, 1)
@@ -51,7 +49,6 @@ export default function useMessages() {
         checked.value.push(messages.value[key])
       }
     }
-    // this.$emit('checked-all', isCheckAll)
   }
 
   function updateCheckAll() {
