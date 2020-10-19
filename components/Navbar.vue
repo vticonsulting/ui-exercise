@@ -18,14 +18,6 @@
               >
                 Messages
               </NuxtLink>
-
-              <a
-                href="https://storybook.tolbert.design"
-                target="_blank"
-                class="px-3 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out rounded-md focus:outline-none focus:text-white focus:bg-gray-700"
-              >
-                Storybook
-              </a>
             </div>
           </div>
         </div>
@@ -109,6 +101,21 @@
         <!-- Navbar Right -->
         <div class="hidden lg:block lg:ml-4">
           <div class="flex items-center">
+            <a
+              href="https://dashboard.cypress.io/projects/5rtouh"
+              target="_blank"
+              class="px-3 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out rounded-md focus:outline-none focus:text-white focus:bg-gray-700"
+            >
+              Cypresss Latest Runs
+            </a>
+
+            <a
+              href="https://storybook.tolbert.design"
+              target="_blank"
+              class="px-3 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out rounded-md focus:outline-none focus:text-white focus:bg-gray-700"
+            >
+              Storybook
+            </a>
             <div class="relative flex-shrink-0 ml-4">
               <div>
                 <button

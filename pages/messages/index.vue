@@ -29,6 +29,7 @@ export default defineComponent({
       isCheckAll,
       truncate,
       formatDate,
+      filteredMessages,
     } = useMessages()
 
     return {
@@ -40,6 +41,7 @@ export default defineComponent({
       isCheckAll,
       truncate,
       formatDate,
+      filteredMessages,
     }
   },
 })
