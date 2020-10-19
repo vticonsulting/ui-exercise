@@ -1,7 +1,5 @@
 <template>
   <div class="mx-16 my-8 prose">
-    <!-- <button @click="$fetch">Refresh</button> -->
-
     <template v-if="$fetchState.pending">
       <ContentPlaceholders>
         <ContentPlaceholdersHeading />

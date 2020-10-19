@@ -1,14 +1,21 @@
-import {useFetch, useContext, ref, computed} from '@nuxtjs/composition-api'
+import {useFetch, useContext, watchEffect, ref, computed} from '@nuxtjs/composition-api'
 import {strip} from '@/helpers'
 
 export default function useMessages() {
-  const {$axios} = useContext()
+  const {$axios, route} = useContext()
   const messages = ref([])
   const checked = ref([])
   const isCheckAll = ref(false)
 
   useFetch(async () => {
     messages.value = await $axios.$get('messages')
+  })
+
+  const filteredMessages = computed(() => {
+    if (route.value.params.tag) {
+      return messages.value.filter(message => message.tags.includes(route.value.params.tag))
+    }
+    return messages.value
   })
 
   // const tags = computed(() => messages.values)
@@ -24,6 +31,16 @@ export default function useMessages() {
         return obj
       }, {}),
   )
+
+  watchEffect(() => console.log(messages.value))
+
+  function removeMessage(index) {
+    messages.value.splice(index, 1)
+  }
+
+  function removeMessages() {
+    messages.value = []
+  }
 
   function checkAll() {
     isCheckAll.value = !isCheckAll.value
@@ -63,5 +80,8 @@ export default function useMessages() {
     updateCheckAll,
     truncate,
     formatDate,
+    removeMessage,
+    removeMessages,
+    filteredMessages,
   }
 }

@@ -21,7 +21,7 @@
           <SvgIcon icon="alert-octagon" />
         </button>
 
-        <button title="Delete">
+        <button @click="removeMessages" title="Delete">
           <SvgIcon icon="delete" />
         </button>
 
@@ -42,7 +42,7 @@
     <table class="w-full">
       <tbody>
         <tr
-          v-for="message in data"
+          v-for="(message, index) in filteredMessages"
           :key="message.id"
           class="text-gray-500 border-b cursor-pointer group hover:bg-gray-100 hover:shadow"
         >
@@ -61,7 +61,6 @@
           </td>
 
           <td class="py-2 pl-6 align-top">
-            <!-- class="p-1 px-2 mr-1 text-xs font-bold text-gray-800 capitalize bg-gray-200 rounded" -->
             <span
               class="inline-flex items-center px-2 py-0.5 rounded mr-1 capitalize text-xs font-medium leading-4 bg-gray-100 text-gray-800"
               :key="tag"
@@ -84,9 +83,9 @@
           </td>
 
           <td class="py-2 pl-6 whitespace-no-wrap actions">
-            <MessageDeleteButton>
+            <button type="button" @click="removeMessage(index)">
               <SvgIcon icon="delete" />
-            </MessageDeleteButton>
+            </button>
 
             <button v-if="false" class="relative" @click="archive(message.id)" type="button">
               <SvgIcon icon="dots-vertical" />
@@ -111,7 +110,6 @@ export default defineComponent({
   },
   setup(props, context) {
     const {
-      messages,
       tags,
       checked,
       checkAll,
@@ -119,16 +117,12 @@ export default defineComponent({
       isCheckAll,
       truncate,
       formatDate,
+      removeMessage,
+      filteredMessages,
+      removeMessages,
     } = useMessages()
 
-    // watchEffect(() => {
-    //   console.log(props)
-    // })
-    // console.log('context: ', context)
-    // console.log('props: ', props)
-
     return {
-      messages,
       tags,
       checked,
       checkAll,
@@ -136,6 +130,9 @@ export default defineComponent({
       isCheckAll,
       truncate,
       formatDate,
+      removeMessage,
+      filteredMessages,
+      removeMessages,
     }
   },
 })

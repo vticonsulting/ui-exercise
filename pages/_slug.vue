@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full">
+  <div class="flex w-full h-full p-12 overflow-hidden bg-white">
     <h1 class="text-3xl font-bold">{{ page.title }}</h1>
     <h2 class="text-3xl font-bold">{{ page.subtitle }}</h2>
 

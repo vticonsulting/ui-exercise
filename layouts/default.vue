@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <div class="m-8 overflow-hidden rounded-md shadow-lg">
+    <div class="overflow-hidden">
       <Nuxt keep-alive :key="$route.params.id" />
     </div>
 

@@ -1,5 +1,5 @@
 <template>
-  <BTable class="hidden mt-8 sm:block" :data="taggedMessages" :columns="columns" />
+  <MessageTable :data="taggedMessages" />
 </template>
 
 <script>
@@ -20,33 +20,5 @@ export default defineComponent({
       taggedMessages,
     }
   },
-  data: () => ({
-    columns: [
-      {
-        field: 'id',
-        label: 'ID',
-        width: '40',
-        numeric: true,
-      },
-      {
-        field: 'sender',
-        label: 'Sender',
-      },
-      {
-        field: 'subject',
-        label: 'Subject',
-      },
-      {
-        field: 'body',
-        label: 'Body',
-        centered: true,
-      },
-      {
-        field: 'date',
-        label: 'Date',
-        centered: true,
-      },
-    ],
-  }),
 })
 </script>

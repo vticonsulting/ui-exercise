@@ -5,8 +5,7 @@
         <div class="flex items-center px-2 lg:px-0">
           <!-- Navbar Brand -->
           <NuxtLink to="/" class="flex-shrink-0 font-mono text-xl font-bold text-white">
-            <!-- <SalesLoftLogo /> -->
-            &lt;Tolbert.Design />
+            <SalesLoftLogo />
           </NuxtLink>
 
           <!-- Navbar Left -->
@@ -101,31 +100,6 @@
         <!-- Navbar Right -->
         <div class="hidden lg:block lg:ml-4">
           <div class="flex items-center">
-            <ColorModeToggle />
-
-            <!-- Announcements Button -->
-            <button
-              class="flex-shrink-0 p-1 text-gray-400 transition duration-150 ease-in-out border-2 border-transparent rounded-full hover:text-white focus:outline-none focus:text-white focus:bg-gray-700"
-              aria-label="Notifications"
-            >
-              <!-- Heroicon name: bell -->
-              <svg
-                class="w-6 h-6"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
-                />
-              </svg>
-            </button>
-
-            <!-- Profile dropdown -->
             <div class="relative flex-shrink-0 ml-4">
               <div>
                 <button
@@ -137,16 +111,6 @@
                   <img class="w-8 h-8 rounded-full" src="/img/avatar.png" alt="" />
                 </button>
               </div>
-              <!--
-              Profile dropdown panel, show/hide based on dropdown state.
-
-              Entering: "transition ease-out duration-100"
-                From: "transform opacity-0 scale-95"
-                To: "transform opacity-100 scale-100"
-              Leaving: "transition ease-in duration-75"
-                From: "transform opacity-100 scale-100"
-                To: "transform opacity-0 scale-95"
-            -->
               <div
                 v-if="false"
                 class="absolute right-0 z-10 w-48 mt-2 origin-top-right rounded-md shadow-lg"
@@ -186,11 +150,6 @@
       </div>
     </div>
 
-    <!--
-    Mobile menu, toggle classes based on menu state.
-
-    Menu open: "block", Menu closed: "hidden"
-  -->
     <div class="hidden lg:hidden">
       <div class="px-2 pt-2 pb-3">
         <a

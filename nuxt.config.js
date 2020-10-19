@@ -1,10 +1,6 @@
 import path from 'path'
 
 export default {
-  server: {
-    host: '0.0.0.0',
-    port: 3000,
-  },
   env: {
     baseUrl: process.env.BASE_URL || 'http://localhost:3000',
     apiUrl: process.env.API_URL || 'http://localhost.3000/api',
@@ -25,14 +21,10 @@ export default {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css?family=Inter:400,500,600&display=swap',
       },
-      {
-        rel: 'stylesheet',
-        href: 'https://cdn.materialdesignicons.com/5.3.45/css/materialdesignicons.min.css',
-      },
     ],
   },
   components: true,
-  modules: ['@nuxt/content', '@nuxtjs/axios', '@nuxtjs/sentry', 'nuxt-buefy'],
+  modules: ['@nuxt/content', '@nuxtjs/axios', '@nuxtjs/sentry'],
   buildModules: [
     '@nuxtjs/color-mode',
     '@nuxtjs/composition-api',
@@ -45,7 +37,7 @@ export default {
   plugins: [
     '@/plugins/portal-vue',
     '@/plugins/vue-content-placeholders',
-    '@/plugins/vue-feather-icons',
+    // '@/plugins/vue-feather-icons',
   ],
   serverMiddleware: ['@/server'],
   router: {
@@ -71,9 +63,6 @@ export default {
   axios: {
     baseURL: process.env.apiUrl || 'http://localhost:3000/api',
     credentials: true,
-  },
-  buefy: {
-    css: false,
   },
   colorMode: {
     preference: 'light',

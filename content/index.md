@@ -1,5 +1,3 @@
 ---
-title: UI Exercise
+title: Dashboard
 ---
-
-## Testing
