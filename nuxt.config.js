@@ -3,12 +3,12 @@ import path from 'path'
 export default {
   server: {
     host: '0.0.0.0',
-    port: 8701,
+    port: 3000,
   },
   env: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:8701',
-    apiUrl: process.env.API_URL || 'http://localhost.8701/api',
-    assetsUrl: process.env.ASSETS_URL || 'http://localhost:8701',
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+    apiUrl: process.env.API_URL || 'http://localhost.3000/api',
+    assetsUrl: process.env.ASSETS_URL || 'http://localhost:3000',
   },
   ssr: false,
   target: 'static',
@@ -69,7 +69,7 @@ export default {
     detailed: true,
   },
   axios: {
-    baseURL: process.env.apiUrl || 'http://localhost:8701/api',
+    baseURL: process.env.apiUrl || 'http://localhost:3000/api',
     credentials: true,
   },
   buefy: {

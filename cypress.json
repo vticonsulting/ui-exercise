@@ -1,4 +1,4 @@
 {
-  "baseUrl": "http://tolbert.test:8701/messages",
+  "baseUrl": "http://localhost:3000/messages",
   "integrationFolder": "cypress/e2e"
 }
