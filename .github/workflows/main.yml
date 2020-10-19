@@ -16,4 +16,4 @@ jobs:
           build: npm run generate
           start: npm run start
           # quote the url to be safe against YML parsing surprises
-          wait-on: "http://localhost:8701"
+          wait-on: "http://localhost:3000"
