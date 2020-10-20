@@ -1,7 +1,7 @@
 <template>
   <tr>
     <td class="select">
-      <slot name="left" :data="data" :is-checked="isChecked" :hello="hello" />
+      <slot name="left" />
     </td>
 
     <td class="sender">
