@@ -19,8 +19,5 @@
 export default {
   layout: 'plain',
   name: 'MessagesPage',
-  data: () => ({
-    show: true,
-  }),
 }
 </script>
