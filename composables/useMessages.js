@@ -40,6 +40,11 @@ export default function useMessages() {
     messages.value = []
   }
 
+  function markAllRead() {
+    messages.value.forEach(message => (message.hasBeenRead = true))
+    console.log(messages)
+  }
+
   function checkAll() {
     isCheckAll.value = !isCheckAll.value
     checked.value = []
@@ -80,5 +85,6 @@ export default function useMessages() {
     removeMessage,
     removeMessages,
     filteredMessages,
+    markAllRead,
   }
 }

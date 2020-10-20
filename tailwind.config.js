@@ -8,6 +8,9 @@ module.exports = {
   theme: {
     darkSelector: '.dark-mode',
     extend: {
+      fontSize: {
+        '2xs': '.625rem', // 10px
+      },
       colors: {
         primary: {
           100: '#EAF8F0',

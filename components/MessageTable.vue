@@ -25,7 +25,7 @@
           <SvgIcon icon="delete" />
         </button>
 
-        <button type="button">
+        <button @click="markAllRead" type="button">
           <SvgIcon icon="email-mark-as-unread" />
         </button>
 
@@ -64,6 +64,7 @@
             <span
               class="inline-flex items-center px-2 py-0.5 rounded mr-1 capitalize text-xs font-medium leading-4 bg-gray-100 text-gray-800"
               :key="tag"
+              :class="tag"
               v-for="tag in message.tags"
             >
               {{ tag }}
@@ -120,6 +121,7 @@ export default defineComponent({
       removeMessage,
       filteredMessages,
       removeMessages,
+      markAllRead,
     } = useMessages()
 
     return {
@@ -133,6 +135,7 @@ export default defineComponent({
       removeMessage,
       filteredMessages,
       removeMessages,
+      markAllRead,
     }
   },
 })

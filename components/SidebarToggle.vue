@@ -1,6 +1,6 @@
 <template>
   <button
-    @click="$store.state.menuOpen = true"
+    @click="openMenu"
     class="px-4 text-gray-500 border-r border-gray-200 focus:outline-none focus:bg-gray-100 focus:text-gray-600 lg:hidden"
     aria-label="Open sidebar"
   >
@@ -17,3 +17,13 @@
     </svg>
   </button>
 </template>
+
+<script>
+import {mapMutations} from 'vuex'
+
+export default {
+  methods: {
+    ...mapMutations(['openMenu']),
+  },
+}
+</script>

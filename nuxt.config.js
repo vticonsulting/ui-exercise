@@ -45,15 +45,6 @@ export default {
     linkExactActiveClass: 'is-exact-active',
   },
   loading: false,
-  // loading: {
-  //   color: '#d5504c',
-  //   height: '5px',
-  // },
-  // loadingIndicator: {
-  //   name: 'rotating-plane',
-  //   background: '#d5504c',
-  //   color: 'white',
-  // },
   ackee: {
     server: 'https://cranky-borg.herokuapp.com',
     domainId: '601bbeb1-8a0a-4d5d-ba1f-a75ce1cefda3',
@@ -82,13 +73,13 @@ export default {
   googleAnalytics: {
     id: process.env.GOOGLE_ANALYTICS_ID,
   },
-  // sentry: {
-  //   dsn: 'https://c30dc69c78434050aed6f64b97cbd645@o244691.ingest.sentry.io/1422222',
-  //   config: {
-  //     maxBreadcrumbs: 50,
-  //     debug: false,
-  //   },
-  // },
+  sentry: {
+    dsn: 'https://c30dc69c78434050aed6f64b97cbd645@o244691.ingest.sentry.io/1422222',
+    config: {
+      maxBreadcrumbs: 50,
+      debug: false,
+    },
+  },
   build: {
     babel: {
       plugins: ['@babel/plugin-syntax-jsx'],

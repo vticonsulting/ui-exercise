@@ -4,26 +4,30 @@
       <div class="relative flex items-center justify-between h-16">
         <div class="flex items-center px-2 lg:px-0">
           <!-- Navbar Brand -->
-          <NuxtLink to="/" class="flex-shrink-0 font-mono text-xl font-bold text-white">
-            <SalesLoftLogo />
+          <NuxtLink
+            to="/"
+            class="flex items-center flex-shrink-0 font-mono text-xl font-bold text-white"
+          >
+            <TolbertDesignLogo class="w-8 h-8" />
+            <span class="ml-2 font-mono" style="font-size: 16px">&lt;Tolbert.Design /></span>
           </NuxtLink>
 
           <!-- Navbar Left -->
           <div class="hidden lg:block lg:ml-6">
             <div class="flex">
-              <NuxtLink
+              <!-- <NuxtLink
                 to="messages"
                 class="px-3 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out rounded-md focus:outline-none focus:text-white focus:bg-gray-700"
                 active-class="bg-gray-900"
               >
                 Messages
-              </NuxtLink>
+              </NuxtLink> -->
             </div>
           </div>
         </div>
 
         <!-- Search Input -->
-        <div class="flex justify-center flex-1 px-2 lg:ml-6 lg:justify-end">
+        <!-- <div class="flex justify-center flex-1 px-2 lg:ml-6 lg:justify-end">
           <div class="w-full max-w-lg lg:max-w-xs">
             <label for="search" class="sr-only">Search</label>
             <div class="relative">
@@ -45,7 +49,7 @@
               />
             </div>
           </div>
-        </div>
+        </div> -->
 
         <!-- Mobile Menu Button -->
         <div class="flex lg:hidden">

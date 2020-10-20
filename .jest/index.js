@@ -1,5 +1,18 @@
-// import '@testing-library/jest-dom/extend-expect'
 import {mount} from '@vue/test-utils'
+
+// export const mountWithAsyncData = async (component, options) => {
+//   let data
+//   if (component.asyncData) {
+//     const asyncDataReq = component.asyncData({app: {$axios: axios}})
+//     await options.respondToAsyncData()
+//     data = await asyncDataReq
+//   }
+
+//   return mount(component, {
+//     data: () => data,
+//     ...options,
+//   })
+// }
 
 export async function mountWithAsyncData(component, {asyncDataContext, ...options} = {}) {
   const initialData = options.data === 'function' ? options.data() : null

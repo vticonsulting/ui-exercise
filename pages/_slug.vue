@@ -1,9 +1,9 @@
 <template>
-  <div class="flex w-full h-full p-12 overflow-hidden bg-white">
-    <h1 class="text-3xl font-bold">{{ page.title }}</h1>
-    <h2 class="text-3xl font-bold">{{ page.subtitle }}</h2>
+  <div class="p-8">
+    <!-- <h1>{{ page.title }}</h1> -->
+    <!-- <h2>{{ page.subtitle }}</h2> -->
 
-    <NuxtContent class="mt-4 prose" :document="page" />
+    <NuxtContent class="mt-4" :document="page" />
   </div>
 </template>
 
