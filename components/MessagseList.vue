@@ -1,17 +1,12 @@
 <template>
   <div>
-    <template v-if="$fetchState.pending">
-      <PendingPlaceholder />
-    </template>
+    <table class="w-full">
+      <tbody>
+        <MessageItem v-for="message in filteredMessages" :key="message.id" :message="message" />
+      </tbody>
+    </table>
 
-    <template v-else-if="$fetchState.error">
-      <p>Error while fetching messages: {{ $fetchState.error.message }}</p>
-    </template>
-
-    <template v-else>
-      <MessageTable :data="messages" class="hidden lg:block" />
-      <MessageList :data="messages" class="lg:hidden" />
-    </template>
+    <pre>{{ checked }}</pre>
   </div>
 </template>
 
@@ -20,9 +15,15 @@ import {defineComponent} from '@nuxtjs/composition-api'
 import useMessages from '@/composables/useMessages'
 
 export default defineComponent({
+  name: 'MessageList',
+  props: {
+    data: {
+      type: Array,
+      default: () => [],
+    },
+  },
   setup(props, context) {
     const {
-      messages,
       tags,
       checked,
       checkAll,
@@ -30,11 +31,13 @@ export default defineComponent({
       isCheckAll,
       truncate,
       formatDate,
+      removeMessage,
       filteredMessages,
+      removeMessages,
+      markAllRead,
     } = useMessages()
 
     return {
-      messages,
       tags,
       checked,
       checkAll,
@@ -42,7 +45,10 @@ export default defineComponent({
       isCheckAll,
       truncate,
       formatDate,
+      removeMessage,
       filteredMessages,
+      removeMessages,
+      markAllRead,
     }
   },
 })
