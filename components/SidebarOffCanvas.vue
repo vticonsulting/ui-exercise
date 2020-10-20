@@ -8,7 +8,7 @@
       <div class="relative flex flex-col flex-1 w-full max-w-xs pt-5 pb-4 bg-white">
         <SidebarCloseButton />
 
-        <Logo class="px-4" />
+        <SalesLoftLogo class="px-4" />
 
         <div class="flex-1 h-0 mt-5 overflow-y-auto">
           <nav class="px-2">
