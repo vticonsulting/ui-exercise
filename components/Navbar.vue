@@ -104,13 +104,14 @@
 
         <!-- Navbar Right -->
         <div class="hidden lg:block lg:ml-4">
-          <div class="flex items-center">
+          <div class="flex items-center space-x-8">
             <a
               href="https://dashboard.cypress.io/projects/5rtouh"
               target="_blank"
               class="px-3 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out rounded-md focus:outline-none focus:text-white focus:bg-gray-700"
             >
-              Cypresss Latest Runs
+              <!-- Cypresss Latest Runs -->
+              <CypressLogo class="h-6 text-white" />
             </a>
 
             <a
@@ -118,7 +119,8 @@
               target="_blank"
               class="px-3 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out rounded-md focus:outline-none focus:text-white focus:bg-gray-700"
             >
-              Storybook
+              <!-- Storybook -->
+              <StorybookLogo class="h-6" />
             </a>
             <div class="relative flex-shrink-0 ml-4">
               <div>

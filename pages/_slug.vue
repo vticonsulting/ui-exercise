@@ -3,7 +3,7 @@
     <!-- <h1>{{ page.title }}</h1> -->
     <!-- <h2>{{ page.subtitle }}</h2> -->
 
-    <NuxtContent class="mt-4" :document="page" />
+    <NuxtContent class="mt-4 prose" :document="page" />
   </div>
 </template>
 

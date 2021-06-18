@@ -2,4 +2,6 @@
 title: Dashboard
 ---
 
-- [Messsages](/messages)
+### Projects
+
+- [SalesLoft UI Exercise](/messages)

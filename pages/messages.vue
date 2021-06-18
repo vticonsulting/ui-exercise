@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  layout: 'plain',
+  //   layout: 'plain',
   name: 'MessagesPage',
 }
 </script>
